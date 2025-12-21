@@ -66,7 +66,7 @@ local function validateKey()
         task.wait(1)
         Library:Unload()
         task.wait()
-        loadstring(request({Url='https://raw.githubusercontent.com/alexgbroski/coolrepositoryname/refs/heads/main/qweqwe.lua'; Method='GET'}).Body)();
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/alexgbroski/coolrepositoryname/refs/heads/main/qweqwe.lua')();
         
     else
         Library:Notify("Invalid key. Try again!")
