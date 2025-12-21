@@ -1162,6 +1162,7 @@ do
     local middle = workspace.Const.Ignore.LocalCharacter.Middle
     local bottom = workspace.Const.Ignore.LocalCharacter.Bottom
     local top = trident.top
+	local originalprismcframe = top.Prism1.CFrame
     local mdpos, bmpos, tppos = middle.CFrame, bottom.CFrame, top.CFrame
     local mvb = ui.box.move:AddTab('exploits')
     local enabled, speed = false, 55
