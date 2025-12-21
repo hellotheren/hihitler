@@ -44,7 +44,8 @@ local trident = {
     lastpos = nil,
     middlepart = nil,
     tcp = nil,
-    original_model = nil
+    original_model = nil,
+	top = nil
 }
 
 
