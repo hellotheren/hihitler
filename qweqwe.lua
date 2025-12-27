@@ -2164,7 +2164,7 @@ do
                 if child.SoundId == "rbxassetid://9119561046" then
                     child:Stop()
                     local sound = Instance.new("Sound",child.Parent)
-                    sound.SoundId = varsglobal.visuals.customid
+                    sound.SoundId = "rbxassetid://"..varsglobal.visuals.customid
                     sound:Play()
                 end 
             end
@@ -2180,7 +2180,7 @@ do
 	Finished = false, -- true / false, only calls callback when you press enter
 	ClearTextOnFocus = true, -- true / false, if false the text will not clear when textbox focused
 		
-	Text = 'enter here rbxassetid://yourid (from toolbox)',
+	Text = 'enter here id (toolbox)',
 	Tooltip = 'pls faster daddy', -- Information shown when you hover over the textbox
 
 	Placeholder = 'need id', -- placeholder text when the box is empty
