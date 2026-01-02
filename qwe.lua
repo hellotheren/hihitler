@@ -125,10 +125,6 @@ end)
 	Disabled = false, -- Will disable the button (true / false)
 	Visible = true -- Will make the button invisible (true / false)
 })
-TabBoxestabs.Tab1:AddLabel("-- [[ CREATORS ]] --")
-TabBoxestabs.Tab1:AddLabel("-- Handsome Jack --")
-TabBoxestabs.Tab1:AddLabel("-- Meha_Mafin --")
-TabBoxestabs.Tab1:AddLabel("-- [[ END ]] --")
 local Unload = TabBoxestabs.Tab1:AddButton({
 	Text = 'Unload',
 	Func = function()
