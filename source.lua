@@ -2370,8 +2370,6 @@ do
         Filled = true,
         Thickness = 0,
     });
-    if canuseimages then rawget(gradr, "_frame").Image = getcustomasset("mafiahub/new/files/grad90r.png"); end
-    if canuseimages then rawget(gradl, "_frame").Image = getcustomasset("mafiahub/new/files/grad90l.png"); end
     local hue1, hue2, fpstimer, fps, finalfps = 0, 0.15, tick(), 0, 60;
     cheat.utility.new_renderstepped(LPH_JIT_MAX(function(delta)
         fps = fps + 1;
@@ -2384,7 +2382,7 @@ do
         if hue1 >= 1 then hue1 = 0 end if hue2 >= 1 then hue2 = 0 end
         rightcolor = dynamic and Color3.fromHSV(hue1, 1, 1) or color2;
         leftcolor = dynamic and Color3.fromHSV(hue2, 1, 1) or color1;
-        watertext = ("mafia hub %s | %s | %s | %s fps"):format(SWG_Version, SWG_ShortName, os.date("%b %d %Y"), tostring(finalfps));
+        watertext = (hub.." %s | %s | %s | %s fps"):format(SWG_Version, SWG_ShortName, os.date("%b %d %Y"), tostring(finalfps));
         gradr.Color = rightcolor;
         gradl.Color = leftcolor;
         gradbackground.Color = gradr.Color:Lerp(gradl.Color, 0.5);
