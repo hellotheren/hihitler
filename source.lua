@@ -27,13 +27,13 @@ if not LPH_OBFUSCATED then
 	LPH_CRASH = function()
 		return print(debug.traceback());
 	end;
-    SWG_DiscordUser = "meha_mafin"
+    SWG_DiscordUser = "noname"
     SWG_DiscordID = 67
     SWG_Private = true
     SWG_Dev = false
     SWG_Version = "full"
-    SWG_Title = 'the clan of mafia'
-    SWG_ShortName = 'guns.lol/kirilldk20'
+    SWG_Title = 'noname'
+    SWG_ShortName = 'noname'
     SWG_FullName = 'trident survival v5'
     SWG_FFA = false
 end;
@@ -62,6 +62,7 @@ local GuiInset = cloneref(game:GetService("GuiService")):GetGuiInset()
 local LocalPlayer = Players.LocalPlayer
 local TextChatService = game:GetService("TextChatService")
 local isLegacyChat = TextChatService.ChatVersion == Enum.ChatVersion.LegacyChatService
+local hub = "noname"
 local Mouse = LocalPlayer:GetMouse()
 local Camera = workspace.CurrentCamera
 local varsglobal = {
@@ -369,11 +370,11 @@ local function getfile(name)
     if success then return content else return print("getfile returned error \""..content.."\"") end
 end
 local function isswimhubfile(file)
-    return isfile("mafiahub/new/files/"..file)
+    return isfile(..hub.."/new/files/"..file)
 end
 local function readswimhubfile(file)
     if not isswimhubfile(file) then return false end
-    local success, returns = pcall(readfile, "mafiahub/new/files/"..file)
+    local success, returns = pcall(readfile, ..hub.."/new/files/"..file)
     if success then return returns else return print(returns) end
 end
 local function loadswimhubfile(file)
@@ -383,7 +384,7 @@ local function loadswimhubfile(file)
 end
 local function getswimhubasset(file)
     if isswimhubfile(file) then return false end
-    local success, returns = pcall(getcustomasset, "swimhub/new/files/"..file)
+    local success, returns = pcall(getcustomasset, hub.."/new/files/"..file)
     if success then return returns else return print(returns) end
 end
 function chatMessage(str)
@@ -394,34 +395,15 @@ function chatMessage(str)
         ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
     end
 end
-local function oprichnina()
-	if game.Players.LocalPlayer.Name == "dthujrgorte" then
-	str = "у меня кароче семья полная такая круглая"
-	if not isLegacyChat then
-        TextChatService.TextChannels.RBXGeneral:SendAsync(str)
-    else
-        ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
-    end
-end
-if game.Players.LocalPlayer.Name  == "tridentsurvival1714" then
-	str = "pls help me. im wanna be slave"
-	if not isLegacyChat then
-        TextChatService.TextChannels.RBXGeneral:SendAsync(str)
-    else
-        ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
-    end
-	
-end
-
 end
 do
-    if not isfolder("mafiahub") then makefolder("mafiahub") end
-    if not isfolder("mafiahub/new") then makefolder("mafiahub/new") end
-    if not isfolder("mafiahub/new/files") then makefolder("mafiahub/new/files") end
+    if not isfolder(hub) then makefolder(hub) end
+    if not isfolder(hub.."/new") then makefolder(hub.."/new") end
+    if not isfolder(hub.."/new/files") then makefolder(hub.."/new/files") end
     local function getfiles(force, list)
         for _, file in list do
             if (force or not force and not isswimhubfile(file)) then
-                writefile("mafiahub/new/files/"..file, getfile(file))
+                writefile(hub.."/new/files/"..file, getfile(file))
             end
         end
     end
@@ -431,11 +413,11 @@ do
     if localassets then
         localassets = HttpService:JSONDecode(localassets)
         if localassets.version ~= assets.version then
-            writefile("mafiahub/new/files/assets.json", gotassets)
+            writefile(hub.."/new/files/assets.json", gotassets)
             getfiles(true, assets.list)
         end
     else
-        writefile("mafiahub/new/files/assets.json", gotassets)
+        writefile(hub.."/new/files/assets.json", gotassets)
     end
     getfiles(false, assets.list)
 end
@@ -1977,7 +1959,7 @@ do
         Color = Color3.fromRGB(138, 128, 255),
         ZIndex = 3,
         Transparency = 1,
-        Text = "guns.lol/kirilldk20",
+        Text = hub,
         Center = true,
         Outline = true,
     })
@@ -2690,8 +2672,8 @@ cheat.SaveManager:SetOptionsTEMP(cheat.Options, cheat.Toggles)
 cheat.ThemeManager:SetLibrary(cheat.Library)
 cheat.SaveManager:SetLibrary(cheat.Library)
 cheat.SaveManager:IgnoreThemeSettings()
-cheat.ThemeManager:SetFolder('mafiahub')
-cheat.SaveManager:SetFolder('mafiahub')
+cheat.ThemeManager:SetFolder(hub)
+cheat.SaveManager:SetFolder(hub)
 cheat.SaveManager:BuildConfigSection(ui.tabs.config)
 cheat.ThemeManager:ApplyToGroupbox(ui.box.themeconfig)
 if not getgenv().loadedsuccess then
@@ -2706,4 +2688,4 @@ elseif getgenv().loadedsuccess and getgenv().loadedsuccess == true then
 end
 getgenv().loadedsuccess = true
 cheat.EspLibrary.load()
---oprichnina()
+
