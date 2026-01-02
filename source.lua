@@ -388,7 +388,7 @@ function chatMessage(str)
         ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
     end
 end
-end
+
 do
     if not isfolder(hub) then makefolder(hub) end
     if not isfolder(hub.."/new") then makefolder(hub.."/new") end
