@@ -358,7 +358,7 @@ repeat if not pcall(function()
 end) then task.wait(0.5) end until trident.middlepart and trident.original_model and trident.tcp
 
 local function getfile(name)
-    local repo = "https://raw.githubusercontent.com/kirilldk20/mafiahub/refs/heads/main/"
+    local repo = "https://raw.githubusercontent.com/hellotheren/hihitler/refs/heads/main/"
     local success, content = pcall(game.HttpGet, game, repo..name)
     if success then return content else return print("getfile returned error \""..content.."\"") end
 end
@@ -511,9 +511,9 @@ cheat.utility = {} do
     end
 end
 if UserInputService.KeyboardEnabled then
-cheat.Library, cheat.Toggles, cheat.Options = loadstring(game:HttpGet('https://raw.githubusercontent.com/kirilldk20/mafiahub/refs/heads/main/library_main.lua'))()
+cheat.Library, cheat.Toggles, cheat.Options = loadstring(game:HttpGet('https://raw.githubusercontent.com/hellotheren/hihitler/refs/heads/main/library_main.lua'))()
 else
-cheat.Library, cheat.Toggles, cheat.Options = loadstring(game:HttpGet('https://raw.githubusercontent.com/kirilldk20/mafiahub/refs/heads/main/guihandlerlinoria.lua'))()
+cheat.Library, cheat.Toggles, cheat.Options = loadstring(game:HttpGet('https://raw.githubusercontent.com/hellotheren/hihitler/refs/heads/main/library_other.lua'))()
 end
 cheat.ThemeManager = loadswimhubfile("library_theme.lua")()
 cheat.SaveManager = loadswimhubfile("library_save.lua")()
