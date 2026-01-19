@@ -14,7 +14,7 @@ local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 local GetHUI = gethui or (function() return CoreGui end);
 local IsKrampus = ((identifyexecutor or (function() return "" end))():lower() == "krampus");
 local IsXeno = ((identifyexecutor or (function() return "" end))():lower() == "xeno");
-local IsRonix = ((identifyexecutor or (function() return "" end))():lower() == "ronix");
+local IsRonix = ((identifyexecutor or (function() return "" end))():lower() == "ronixexploit");
 local ScreenGui = Instance.new('ScreenGui');
 ScreenGui.Name = "nuhuh";
 ProtectGui(ScreenGui);
