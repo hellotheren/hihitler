@@ -14,7 +14,7 @@ local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 local GetHUI = gethui or (function() return CoreGui end);
 local IsKrampus = ((identifyexecutor or (function() return "" end))():lower() == "krampus");
 local IsXeno = ((identifyexecutor or (function() return "" end))():lower() == "xeno");
-local IsRonix = ((identifyexecutor or string.lower((function() return "" end))():lower(),"ronixexploit") );
+local IsRonix = ((identifyexecutor or string.find((function() return "" end))():lower(),"ronixexploit") );
 if IsRonix then
 	print("Ronix")
 end
