@@ -64,7 +64,7 @@ local Library = {
 	DevicePlatform = Enum.Platform.None;
 	CanDrag = true;
 	CantDragForced = true;
-	ShowCustomCursor = false; 
+	ShowCustomCursor = true; 
 	VideoLink = "";
 	TotalTabs = 0;
 };
@@ -3918,7 +3918,7 @@ if typeof(Config.Size) ~= 'UDim2' then
 			-- A bit scuffed, but if we're going from not toggled -> toggled we want to show the frame immediately so that the fade is visible.
 			Outer.Visible = true;
 
-			if Library.ShowCustomCursor and Drawing and not IsXeno and not IsRonix then
+			if Library.ShowCustomCursor and Drawing and not IsXeno then
 				local Cursor = Drawing.new("Triangle")
 				Cursor.Thickness = 1
 				Cursor.Filled = true
