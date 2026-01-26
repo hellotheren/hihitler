@@ -3397,7 +3397,7 @@ if typeof(Config.Size) ~= 'UDim2' then
         ZIndex = 2;
         Parent = MainSectionInner;
     });
-	local function ChangeBackground(id)
+	getgenv().ChangeBackground  = function (id)
 		TabContainer.Image = "rbxassetid://"..id
 	end
 	
