@@ -3388,14 +3388,18 @@ if typeof(Config.Size) ~= 'UDim2' then
 		Parent = TabArea;
 	});
 
-	local TabContainer = Library:Create('Frame', {
-		BackgroundColor3 = Library.MainColor;
-		BorderColor3 = Library.OutlineColor;
-		Position = UDim2.new(0, 8, 0, 30);
-		Size = UDim2.new(1, -16, 1, -38);
-		ZIndex = 2;
-		Parent = MainSectionInner;
-	});
+	local TabContainer = Library:Create('ImageLabel', {
+        BackgroundColor3 = Library.MainColor;
+        BorderColor3 = Library.OutlineColor;
+        Image = "http://www.roblox.com/asset/?id=18300506962";
+        Position = UDim2.new(0, 8, 0, 30);
+        Size = UDim2.new(1, -16, 1, -38);
+        ZIndex = 2;
+        Parent = MainSectionInner;
+    });
+	local function ChangeBackground(id)
+		TabContainer.Image = "rbxassetid://"..id
+	end
 	
 	local InnerVideoBackground = Library:Create('VideoFrame', {
 		BackgroundColor3 = Library.MainColor;
