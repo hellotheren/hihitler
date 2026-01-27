@@ -802,7 +802,7 @@ cheat.EspLibrary = {}; LPH_NO_VIRTUALIZE(function()
             if not model.PrimaryPart then return "unknown" end
             local models = game:GetService("ReplicatedStorage").HandModels
 			local function getchildren(ob)
-				for i,v in pairs(v:GetChildren()) do
+				for i,v in pairs(ob:GetChildren()) do
 					if v ~= null then
 						return v
 					end
