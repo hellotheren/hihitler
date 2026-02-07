@@ -244,7 +244,7 @@ cheat.utility = {} do
 			drawing:Destroy()
             drawing = nil
             end
-			cheat.drawings[_]:Remove()
+			cheat.drawings[_]:Destroy()
             cheat.drawings[_] = nil
         end
         for hooked, original in pairs(cheat.hooks) do
