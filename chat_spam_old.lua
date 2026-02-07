@@ -241,7 +241,7 @@ cheat.utility = {} do
         end
         for _, drawing in pairs(cheat.drawings) do
             if drawing then
-			drawing:Remove()
+			drawing:Destroy()
             drawing = nil
             end
 			cheat.drawings[_]:Remove()
