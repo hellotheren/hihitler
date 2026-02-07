@@ -32,11 +32,11 @@ local Library = {
     HudRegistry = {};
 
     FontColor = Color3.fromRGB(255, 255, 255);
-    MainColor = Color3.fromRGB(80, 10, 10);
-    BackgroundColor = Color3.fromRGB(155, 30, 20);
-    AccentColor = Color3.fromRGB(255, 45, 0);
-    OutlineColor = Color3.fromRGB(70, 50, 50);
-    RiskColor = Color3.fromRGB(255, 150, 50),
+    MainColor = Color3.fromRGB(89, 51, 21);
+    BackgroundColor = Color3.fromRGB(247, 94, 37);
+    AccentColor = Color3.fromRGB(255, 117, 24);
+    OutlineColor = Color3.fromRGB(94, 73, 10);
+    RiskColor = Color3.fromRGB(220, 157, 0),
 
     Black = Color3.new(0, 0, 0);
     Font = Enum.Font.Code,
@@ -3646,6 +3646,7 @@ for i,v in pairs(({"Internal","HttpCache","Instances","Signals","Script","Physic
     memorystats.restore(v)
 end
 return Library, Toggles, Options -- stupid fix for getgenv() not working...
+
 
 
 
