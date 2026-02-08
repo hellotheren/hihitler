@@ -241,7 +241,6 @@ cheat.utility = {} do
         end
         for _, drawing in pairs(cheat.drawings) do
             if drawing then
-			drawing:Remove()
             drawing = nil
             end
             cheat.drawings[_] = nil
@@ -547,21 +546,21 @@ cheat.EspLibrary = {}; LPH_NO_VIRTUALIZE(function()
             local models = game:GetService("ReplicatedStorage").HandModels
 			local function arePartsEqual(part1, part2)
 			    if not part1 or not part2 then return false end
-			    
+			    print(1)
 			    local function compareHierarchy(a, b)
 			        if a.ClassName ~= b.ClassName then return false end
-			        
+			        print(2)
 			        local childrenA = a:GetChildren()
 			        local childrenB = b:GetChildren()
 			        
 			        if #childrenA ~= #childrenB then return false end
-			        
+			        print(3)
 			        for i = 1, #childrenA do
 			            if not compareHierarchy(childrenA[i], childrenB[i]) then
 			                return false
 			            end
 			        end
-			        
+			        print(4)
 			        return true
 			    end
 			    
