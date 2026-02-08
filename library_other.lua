@@ -68,7 +68,7 @@ local Library = {
 	CanDrag = true;
 	CantDragForced = true;
 	ShowCustomCursor = true; 
-	VideoLink = "https://create.roblox.com/store/asset/75748560450738/Operations-Siege-Gameplay-Trailer";
+	VideoLink = "";
 	TotalTabs = 0;
 };
 
