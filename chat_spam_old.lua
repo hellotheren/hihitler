@@ -544,30 +544,34 @@ cheat.EspLibrary = {}; LPH_NO_VIRTUALIZE(function()
             if not _IsA(model,"Model") then return "unknown" end
             if not model.PrimaryPart then return "unknown" end
             local models = game:GetService("ReplicatedStorage").HandModels
-			local function arePartsEqual(part1, part2)
-			    if not part1 or not part2 then return false end
-			    print(1)
-			    local function compareHierarchy(a, b)
-			        if a.ClassName ~= b.ClassName then return false end
-			        print(2)
-			        local childrenA = a:GetChildren()
-			        local childrenB = b:GetChildren()
-			        
-			        if #childrenA ~= #childrenB then return false end
-			        print(3)
-			        for i = 1, #childrenA do
-			            if not compareHierarchy(childrenA[i], childrenB[i]) then
-			                return false
-			            end
-			        end
-			        print(4)
-			        return true
-			    end
-			    
-			end
+			local function findMatchingPartName(part1, part2)
+                local function compareHierarchy(a, b)
+                    if a.ClassName ~= b.ClassName then return false end
+                    
+                    local childrenA = a:GetChildren()
+                    local childrenB = b:GetChildren()
+                    
+                    if #childrenA ~= #childrenB then return false end
+                    
+                    for i = 1, #childrenA do
+                        if not compareHierarchy(childrenA[i], childrenB[i]) then
+                            return false
+                        end
+                    end
+                    
+                    return true
+                end
+                
+                if compareHierarchy(part1, part2) then
+                    return part1.Name
+                end
+                
+                return "unknown"
+            end
+
 			for  _, m in pairs(models:GetChildren())  do
 				if m:IsA("Model") then
-					if arePartsEqual(m, model) then
+					if findMatchingPartName(m, model) then
 						return tostring(m.Name)
 					end
 				end
