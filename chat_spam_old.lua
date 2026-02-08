@@ -546,21 +546,34 @@ cheat.EspLibrary = {}; LPH_NO_VIRTUALIZE(function()
             if not _IsA(model,"Model") then return "unknown" end
             if not model.PrimaryPart then return "unknown" end
             local models = game:GetService("ReplicatedStorage").HandModels
-			local function getchildren(ob)
-				for i,v in pairs(ob:GetChildren()) do
-					if v ~= null then
-						return v
+			local function arePartsEqual(part1, part2)
+			    if not part1 or not part2 then return false end
+			    
+			    local function compareHierarchy(a, b)
+			        if a.ClassName ~= b.ClassName then return false end
+			        
+			        local childrenA = a:GetChildren()
+			        local childrenB = b:GetChildren()
+			        
+			        if #childrenA ~= #childrenB then return false end
+			        
+			        for i = 1, #childrenA do
+			            if not compareHierarchy(childrenA[i], childrenB[i]) then
+			                return false
+			            end
+			        end
+			        
+			        return true
+			    end
+			    
+			end
+			for  _, m in pairs(models:GetChildren())  do
+				if m:IsA("Model") then
+					if arePartsEqual(m, model) then
+						return tostring(m.Name)
 					end
 				end
 			end
-        	for i, m in pairs(models:GetChildren()) do
-                if m and _FindFirstChild(m,"Handle") and _IsA(m.Handle,"MeshPart") then
-                    if getchildren(m) == getchildren(model) then
-                        return tostring(m.Name)
-                    end
-                end
-            end
-            
             return "unknown"
             
         else
