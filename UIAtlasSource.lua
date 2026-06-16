@@ -10,6 +10,8 @@
 Made by RoadToGlory#9879
 Join: https://discord.gg/xu5dDS3Pb9
 
+
+P.S  +Rep RoadToGlory#9879 for beautiful ui
 ]]
 
 local VERSION = "1.2"
