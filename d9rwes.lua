@@ -4892,6 +4892,7 @@ CMDs[#CMDs + 1] = {NAME = 'addplugin / plugin [name]', DESC = 'Add a plugin via 
 CMDs[#CMDs + 1] = {NAME = 'removeplugin / deleteplugin [name]', DESC = 'Remove a plugin via command'}
 CMDs[#CMDs + 1] = {NAME = 'reloadplugin [name]', DESC = 'Reloads a plugin'}
 CMDs[#CMDs + 1] = {NAME = 'addallplugins / loadallplugins', DESC = 'Adds all available plugins from the workspace folder'}
+CMDs[#CMDs + 1] = {NAME = 'randomhub / hub', DESC = 'Will load random hub'}
 -- wait()
 
 for i = 1, #CMDs do
@@ -12971,7 +12972,9 @@ addcmd("debug", {}, function(args, speaker)
     _G.IY_DEBUG = opt
     notify("debug", tostring(opt), 1)
 end)
-
+addcmd('randomhub',{},function(args, speaker)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/hellotheren/hihitler/refs/heads/main/RandomHubHandler.lua"))()
+end)
 if IsOnMobile then
 	local QuickCapture = Instance.new("TextButton")
 	local UICorner = Instance.new("UICorner")
