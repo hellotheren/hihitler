@@ -4631,7 +4631,6 @@ CMDs[#CMDs + 1] = {NAME = 'spectate / view [player]', DESC = 'View a player'}
 CMDs[#CMDs + 1] = {NAME = 'viewpart / viewp [part name]', DESC = 'View a part'}
 CMDs[#CMDs + 1] = {NAME = 'unspectate / unview', DESC = 'Stops viewing player'}
 CMDs[#CMDs + 1] = {NAME = 'freecam / fc', DESC = 'Allows you to freely move camera around the game'}
-CMDs[#CMDs + 1] = {NAME = 'robloxcam / rc', DESC = 'Allows you to freely move camera around the game (roblox version)'}
 CMDs[#CMDs + 1] = {NAME = 'freecampos / fcpos [X Y Z]', DESC = 'Moves / opens freecam in a certain position'}
 CMDs[#CMDs + 1] = {NAME = 'freecamwaypoint / fcwp [name]', DESC = 'Moves / opens freecam to a waypoint'}
 CMDs[#CMDs + 1] = {NAME = 'freecamgoto / fcgoto / fctp [player]', DESC = 'Moves / opens freecam to a player'}
@@ -4892,7 +4891,9 @@ CMDs[#CMDs + 1] = {NAME = 'addplugin / plugin [name]', DESC = 'Add a plugin via 
 CMDs[#CMDs + 1] = {NAME = 'removeplugin / deleteplugin [name]', DESC = 'Remove a plugin via command'}
 CMDs[#CMDs + 1] = {NAME = 'reloadplugin [name]', DESC = 'Reloads a plugin'}
 CMDs[#CMDs + 1] = {NAME = 'addallplugins / loadallplugins', DESC = 'Adds all available plugins from the workspace folder'}
+CMDs[#CMDs + 1] = {NAME = '', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'randomhub / hub', DESC = 'Will load random hub'}
+CMDs[#CMDs + 1] = {NAME = 'robloxcam / rc', DESC = 'Allows you to freely move camera around the game (roblox version)'}
 -- wait()
 
 for i = 1, #CMDs do
@@ -12972,7 +12973,7 @@ addcmd("debug", {}, function(args, speaker)
     _G.IY_DEBUG = opt
     notify("debug", tostring(opt), 1)
 end)
-addcmd('randomhub',{},function(args, speaker)
+addcmd('randomhub',{"hub"},function(args, speaker)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/hellotheren/hihitler/refs/heads/main/RandomHubHandler.lua"))()
 end)
 if IsOnMobile then
